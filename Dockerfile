@@ -4,7 +4,7 @@ LABEL maintainer="tinhhn.uit@gmail.com"
 
 WORKDIR /app
 
-COPY trigger.py .
+COPY trigger.py /usr/local/bin/trigger
 
 RUN pip3 install python_gitlab \
-    && echo "alias trigger='python /app/trigger.py'" >> ~/.bashrc
+    && chmod +x /usr/local/bin/trigger
